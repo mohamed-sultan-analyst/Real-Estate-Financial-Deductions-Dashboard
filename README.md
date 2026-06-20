@@ -3,6 +3,8 @@
 ## Project Overview
 An interactive Power BI dashboard designed for Senior Cost Control and Operations Management to monitor financial metrics, track subcontractor deductions, and optimize debit note processing. This project solves complex structural data challenges by transforming aggregated site records into granular, audit-ready financial insights, ensuring total cash flow protection and strict auditing control.
 
+**##Confidentiality Note: To safeguard proprietary company data and adhere to strict non-disclosure policies, all financial figures, subcontractor names, material descriptions, and specific historical dates within this repository and dashboard previews have been completely anonymized, randomized, or synthesized. The workflows and data structures represent actual engineering logic, but do not mirror real-time or active commercial records.**
+
 ## Dashboard Preview
 
 ### 1. Debit Notes & Deductions Overview
