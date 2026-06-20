@@ -6,7 +6,7 @@ An interactive Power BI dashboard designed for Senior DC Cost Control and Operat
 ##  Dashboard Preview
 
 ###  1. Debit Notes & Deductions Overview
-![Debit Notes Overview](Screenshot_Deductions.png)
+![Debit Notes Overview](Screenshot _Deductions.png)
 
 ###  2. Subcontractor Performance Tracking
 ![Subcontractors Performance](Screenshot_Subcontractor_Performance.png)
