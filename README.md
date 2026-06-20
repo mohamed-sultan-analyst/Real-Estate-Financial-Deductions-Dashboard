@@ -1,33 +1,34 @@
-#  Real Estate Debit Notes and Deductions Dashboard
+# Real Estate Debit Notes and Deductions Dashboard
 
-##  Project Overview
-An interactive Power BI dashboard designed for Senior DC Cost Control and Operations Management to monitor financial metrics, track subcontractor deductions, and optimize debit note processing. This project focuses on protecting cash flow and strengthening auditing standards by bridging the gap between site logs and financial control records.
+## Project Overview
+An interactive Power BI dashboard designed for Senior Cost Control and Operations Management to monitor financial metrics, track subcontractor deductions, and optimize debit note processing. This project solves complex structural data challenges by transforming aggregated site records into granular, audit-ready financial insights, ensuring total cash flow protection and strict auditing control.
 
-##  Dashboard Preview
+## Dashboard Preview
 
-###  1. Debit Notes & Deductions Overview
+### 1. Debit Notes & Deductions Overview
 ![Debit Notes Overview](Screenshot_Deductions..png)
 
-###  2. Subcontractor Performance Tracking
+### 2. Subcontractor Performance Tracking
 ![Subcontractors Performance](Screenshot_Subcontractor_Performance.png)
 
-##  Core Features and Visual Hierarchy
-* **Financial KPIs:** Real-time tracking of total deductions, company share balances, and subcontractor liabilities.
-* **Work Package Breakdown:** High-contrast visualization isolating operational claims by specific sectors including HSE, Equipment, and Labor.
+## Core Features and Visual Hierarchy
+* **Financial KPIs:** Real-time tracking of total deductions, company share recoveries, and subcontractor liabilities.
+* **Work Package Breakdown:** High-contrast visualization isolating operational claims by specific sectors including HSE, Equipment, Materials, and Labor.
 * **Performance Ledger:** A granular data grid designed for financial reconciliation, mapping balances directly to specific subcontracting entities.
 * **Operational Slicers:** Dynamic filtering by divisions and creditor types to isolate billing workflows instantly.
 
-##  Data Infrastructure and Pipeline
-To build a reliable reporting layer, structural SQL pipelines were implemented to pull, clean, and consolidate transactional records. The logic handles:
-*  Merging independent material orders with site penalty logs and cost control sheets.
-*  Aggregate functions to compute actualized financial impacts and aging delays.
-*  Data quality filtering to standardize naming conventions and handle pending transaction flags.
+## Advanced Data Infrastructure (Power Query Pipeline)
+To build a reliable reporting layer, an advanced ETL pipeline was engineered entirely within Power Query (M Language) to resolve complex many-to-many transaction relationships without altering the source system:
+* **Dynamic Property & Villa Unwrapping:** Programmatically parsed and tokenized multi-villa compound strings (e.g., separating compressed site logs) to allocate flat-rate deduction expenses evenly across individual structural units.
+* **Multi-Division Task Splitting:** Consolidated and cross-expanded multi-tier project divisions (`DEVSION 1-8`), dynamically weight-averaging values based on active task counts to prevent double-counting.
+* **Automated Accountability Routing:** Implemented conditional logical layers to dynamically audit and classify whether a debit note represents a direct recovery for the **Company Share** or a back-to-back liability transfer to another **Creditor Subcontractor**.
+* **Normalization & Schema Cleanliness:** Streamlined data quality by unpivoting complex matrices, stripping administrative metadata, applying strict type casting, and standardizing directional values using absolute mathematical transformations (`Number.Abs`).
 
-##  Technical Stack
-* **Data Engineering:** SQL / Power Query
+## Technical Stack
+* **Data Engineering & ETL:** Power Query (Advanced M-Language Pipeline)
 * **Analytics and Visualization:** Power BI Desktop
-* **Architecture:** Star Schema, Row-Level Consistency, and Negative Space Optimization
+* **Data Architecture:** Star Schema Modeling, Row-Level Consistency, and Negative Space Optimization
 
-##  Deployment and Usage
-1. Review the data architecture and logic inside the query file.
+## Deployment and Usage
+1. Review the advanced M-code transformation logic inside the Power Query editor.
 2. Open the `.pbix` file using Power BI Desktop to explore the full interactive layouts and drill-down functionality.
